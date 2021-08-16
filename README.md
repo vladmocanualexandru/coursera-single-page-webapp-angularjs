@@ -1,2 +1,2 @@
 # coursera-single-page-webapp-angularjs
-Test repo for coursera
+Git repo for the Single Page Web Application with AngularJS Coursera course
