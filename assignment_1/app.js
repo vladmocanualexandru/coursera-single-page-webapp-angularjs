@@ -31,7 +31,6 @@
             
             if(itemCount==0) {
                 $scope.resultMessage = "Please enter data first";
-                $scope.warningMessage = ""
                 $scope.borderColor = "#F00"
                 $scope.fontColor = "#F00"
             } else if (itemCount<=3) {
