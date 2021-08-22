@@ -21,9 +21,9 @@
 
             <div class="item" ng-if="toBuyCtrl.getItems().length == 0">Everything is bought! <i class="bi bi-emoji-sunglasses"></i></div>
 
-            <div class="item clickable" ng-repeat="item in toBuyCtrl.getItems()" ng-click="toBuyCtrl.addItemToBought($index)">
+            <div class="item clickable" ng-repeat="item in toBuyCtrl.getItems()" >
                 <span class="itemlabel">- Buy {{item.quantity}} {{item.name}} </span>
-                <span class="button"><i class="bi bi-cart-plus"></i> bought!</span>
+                <span class="button" ng-click="toBuyCtrl.addItemToBought($index)"><i class="bi bi-cart-plus"></i> bought!</span>
             </div>
         </div>
     </div>
@@ -33,9 +33,9 @@
         
         <div class="item" ng-if="alreadyBoughtCtrl.getItems().length == 0">Nothing bought yet... <i class="bi bi-emoji-frown"></i></div>
         
-        <div class="item clickable" ng-repeat="item in alreadyBoughtCtrl.getItems()" ng-click="alreadyBoughtCtrl.addItemToToBuy($index)">
+        <div class="item clickable" ng-repeat="item in alreadyBoughtCtrl.getItems()">
             <span class="itemlabel">Bought {{item.quantity}} {{item.name}}</span>
-            <span class="button"><i class="bi bi-cart-x-fill"></i></span>
+            <span class="button" ng-click="alreadyBoughtCtrl.addItemToToBuy($index)"><i class="bi bi-cart-x-fill"></i> undo</span>
         </div>
     </div>
 
