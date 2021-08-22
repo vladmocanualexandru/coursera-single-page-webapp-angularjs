@@ -4,7 +4,7 @@
     angular.module("assignment2App", [])
         .controller("toBuyController", ToBuyController)
         .controller("alreadyBoughtController", AlreadyBoughtController)
-        .service("shoppingCartService", ShoppingServiceService)
+        .service("shoppingCartService", ShoppingListCheckOffService )
 
     ToBuyController.$inject = ['shoppingCartService']
     function ToBuyController(shoppingCartService){
@@ -32,7 +32,7 @@
         }
     }
 
-    function ShoppingServiceService(){
+    function ShoppingListCheckOffService (){
         var cartService = this
         
         cartService.stuffToBuy = [
