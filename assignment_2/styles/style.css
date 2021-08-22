@@ -1,0 +1,33 @@
+div.itemListContainer {
+    margin:20px;
+    padding:20px;
+    float:left;
+    font-size: 24px;
+    border: 3px solid transparent;
+}
+
+div.itemListContainer .item.clickable {
+    cursor: pointer;
+}
+
+div.itemListContainer .item.clickable:hover span.itemlabel {
+    text-decoration: line-through;
+}
+
+div.itemListContainer .item.clickable .button {
+    opacity: 0;
+    margin-left: 20px;
+}
+
+div.itemListContainer .item.clickable:hover .button {
+    opacity: 1;
+}
+
+#toBuyList {
+    background-color: rgb(255, 255, 131);
+    border-color: rgb(65, 65, 2);
+}
+
+#alreadyBoughtList {
+    font-style: italic;
+}

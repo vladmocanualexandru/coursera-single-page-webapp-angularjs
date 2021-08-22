@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+
+    <title>Assignment_2</title>
+</head>
+<body ng-app="assignment2App">
+
+    <div id="toBuyList" class="itemListContainer">
+        <div ng-controller="toBuyController as toBuyCtrl">
+            <div class="item" style="text-decoration: underline;">To Buy:</div>
+
+            <div class="item" ng-if="toBuyCtrl.getItems().length == 0">Everything is bought! <i class="bi bi-emoji-sunglasses"></i></div>
+
+            <div class="item clickable" ng-repeat="item in toBuyCtrl.getItems()" ng-click="toBuyCtrl.addItemToBought($index)">
+                <span class="itemlabel">- Buy {{item.quantity}} {{item.name}} </span>
+                <span class="button"><i class="bi bi-cart-plus"></i> bought!</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="alreadyBoughtList" class="itemListContainer" ng-controller="alreadyBoughtController as alreadyBoughtCtrl">
+        <div class="item" style="text-decoration: underline;">Already Bought:</div>
+        
+        <div class="item" ng-if="alreadyBoughtCtrl.getItems().length == 0">Nothing bought yet... <i class="bi bi-emoji-frown"></i></div>
+        
+        <div class="item clickable" ng-repeat="item in alreadyBoughtCtrl.getItems()" ng-click="alreadyBoughtCtrl.addItemToToBuy($index)">
+            <span class="itemlabel">Bought {{item.quantity}} {{item.name}}</span>
+            <span class="button"><i class="bi bi-cart-x-fill"></i></span>
+        </div>
+    </div>
+
+</body>
+</html>
