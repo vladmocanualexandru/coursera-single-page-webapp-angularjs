@@ -5,7 +5,7 @@
         .controller("menuController", MenuController)
         .service("menuSearchService", MenuSearchService)
         .directive("foundItems", FoundItemsDirective)
-        .constant('apiBaseUrl', 'http://davids-restaurant.herokuapp.com')
+        .constant('apiBaseUrl', 'https://davids-restaurant.herokuapp.com')
 
     MenuController.$inject=['menuSearchService']
     function MenuController(menuSearchService){
