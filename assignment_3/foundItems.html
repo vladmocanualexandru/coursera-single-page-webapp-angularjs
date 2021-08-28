@@ -1,0 +1,8 @@
+<h3>Search results ({{searchResults.length}})</h3>
+<ul>
+    <li ng-repeat="item in searchResults" ng-class="$index%2==0?'searchResult':'searchResult striped'">
+        <h4>{{item.short_name}} - {{item.name}}</h4>
+        <i>{{item.description}}</i><br>
+        <button ng-click="removeItemRef({index:$index})"><i class="bi bi-hand-thumbs-down"></i> Don't want this one!</button>
+    </li>
+</ul>

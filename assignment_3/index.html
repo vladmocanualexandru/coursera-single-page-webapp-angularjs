@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="assignment3App">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+
+    <link rel="shortcut icon" src="favicon.ico">
+    <title>Assignment_3</title>
+    
+</head>
+<body ng-controller="menuController as menuCtrl">
+
+    <input type="text" ng-model="menuCtrl.searchCriteria"placeholder="Search description">
+
+    <input name="nameSearchCB" type="checkbox" ng-model="menuCtrl.searchInTitle" style="margin-left:20px;">
+    <label for="nameSearchCB" style="margin-right:20px;">Search also in name</label>
+
+    <button ng-click="menuCtrl.search()" ng-disabled="menuCtrl.isLoading"><i class="bi bi-search"></i> Narrow It Down For Me!</button><img ng-if="menuCtrl.isLoading" id="loadingAnimation" src="loading.gif"><br>
+
+    <div ng-hide="menuCtrl.firstTime">
+        <found-items search-results="menuCtrl.found" remove-item-ref="menuCtrl.removeItem(index)"></found-items>
+        <h4 ng-if="menuCtrl.found.length == 0">Nothing found!</h4>
+    </div>
+</body>
+</html>

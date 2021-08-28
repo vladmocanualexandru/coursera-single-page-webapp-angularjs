@@ -1,0 +1,16 @@
+body {
+    padding: 50px;
+    line-height: 32px;
+}
+
+li.searchResult {
+    padding-bottom:20px;
+}
+
+li.searchResult.striped {
+    background: #EEE;
+}
+
+#loadingAnimation {
+    margin-left:20px;
+}
