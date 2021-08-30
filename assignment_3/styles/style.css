@@ -14,3 +14,8 @@ li.searchResult.striped {
 #loadingAnimation {
     margin-left:20px;
 }
+
+span.searchWord {
+    background:yellow;
+    font-weight: bold;
+}

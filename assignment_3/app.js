@@ -7,8 +7,8 @@
         .directive("foundItems", FoundItemsDirective)
         .constant('apiBaseUrl', 'https://davids-restaurant.herokuapp.com')
 
-    MenuController.$inject=['menuSearchService']
-    function MenuController(menuSearchService){
+    MenuController.$inject=['menuSearchService', '$sce']
+    function MenuController(menuSearchService, $sce){
         var menuCtrl = this;
 
         menuCtrl.searchInTitle = false;
@@ -48,6 +48,10 @@
         menuCtrl.removeItem = function(index){
             menuCtrl.found.splice(index, 1);
         }
+
+        menuCtrl.highlightCriteria = function(text){
+            return $sce.trustAsHtml(text.replace(new RegExp(menuCtrl.searchCriteria, 'gi'), '<span class="searchWord">$&</span>'));
+        }
     }
 
     MenuSearchService.$inject = ['$http', 'apiBaseUrl']
@@ -66,7 +70,8 @@
             templateUrl:"foundItems.html",
             scope:{
                 searchResults:"<",
-                removeItemRef:"&"
+                removeItemRef:"&",
+                highlightRef:"&"
             },
         }
 
