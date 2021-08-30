@@ -71,7 +71,8 @@
             scope:{
                 searchResults:"<",
                 removeItemRef:"&",
-                highlightRef:"&"
+                highlightRef:"&",
+                highlightTitle:"<"
             },
         }
 

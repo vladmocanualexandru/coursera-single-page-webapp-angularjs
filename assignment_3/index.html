@@ -25,7 +25,7 @@
     <button ng-click="menuCtrl.search()" ng-disabled="menuCtrl.isLoading"><i class="bi bi-search"></i> Narrow It Down For Me!</button><img ng-if="menuCtrl.isLoading" id="loadingAnimation" src="loading.gif"><br>
 
     <div ng-hide="menuCtrl.firstTime">
-        <found-items search-results="menuCtrl.found" remove-item-ref="menuCtrl.removeItem(index)" highlight-ref="menuCtrl.highlightCriteria(text)"></found-items>
+        <found-items search-results="menuCtrl.found" remove-item-ref="menuCtrl.removeItem(index)" highlight-ref="menuCtrl.highlightCriteria(text)" highlight-title="menuCtrl.searchInTitle"></found-items>
         <h4 ng-if="menuCtrl.found.length == 0">Nothing found!</h4>
     </div>
 
