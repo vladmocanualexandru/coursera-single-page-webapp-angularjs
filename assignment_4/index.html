@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="restaurantModule">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="styles/bootstrap.min.css">
+        <link rel="stylesheet" href="styles/bootstrap-icons.css">
+        <link rel="stylesheet" href="styles/style.css">
+
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <title>Assignment_4</title>
+        
+    </head>
+    <body>
+        <div id="header">
+            <h3 class="title">
+                The Black Sheep Restaurant
+            </h3>
+            Family owned since 1988
+               
+        </div>
+
+        <div id="bodyWrapper">
+            <spinner></spinner>
+            <ui-view></ui-view>
+        </div>
+
+        <div id="footer">
+            The Black Sheep Restaurant, 2021
+        </div>
+
+        <!-- Libraries -->
+        <script src="lib/angular.min.js"></script>
+        <script src="lib/angular-ui-router.min.js"></script>
+
+        <!-- Modules -->
+        <script src="src/restaurantMenu/restaurantMenu.module.js"></script>
+        <script src="src/spinner/spinner.module.js"></script>
+
+        <!-- Routes -->
+        <script src="src/routes.js"></script>
+
+        <!-- 'restaurantMenu' module artifacts -->
+        <script src="src/restaurantMenu/categories.state.controller.js"></script>
+        <script src="src/restaurantMenu/items.state.controller.js"></script>
+        <script src="src/restaurantMenu/dataDownload.service.js"></script>
+
+        <!-- 'spinner' module artifacts -->
+        <script src="src/spinner/spinner.component.js"></script>
+        
+    </body>
+</html>

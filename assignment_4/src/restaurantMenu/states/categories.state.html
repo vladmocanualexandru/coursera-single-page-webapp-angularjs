@@ -1,0 +1,18 @@
+<div id="breadcrumb">
+    <a ui-sref="home">Home</a> > Menu
+</div>
+<ul>
+    <!--
+        {
+            "id":81,
+            "short_name":"L",
+            "name":"Lunch",
+            "special_instructions":"Sunday-Friday 11:15am-3:00pm. Served with your choice of rice (Vegetable Fried RIce, Steamed Rice, Brown Rice), AND EITHER soup (Hot \u0026 Sour, Wonton, Vegetable, Egg Drop, Chicken Corn Soup) OR veggie egg roll. $1.00 extra to have both soup and egg roll.",
+            "url":"https://davids-restaurant.herokuapp.com/categories/81.json"}
+    -->
+    <div class="categoryTile" ng-repeat="cat in catCtrl.cats.data" ui-sref="items({catShortName:cat.short_name})">
+        <img src="images/categories/{{cat.short_name}}.jpg">
+        ({{cat.short_name}}) - {{cat.name}}
+    </div>
+
+</ul>

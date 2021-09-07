@@ -1,0 +1,10 @@
+<div id="breadcrumb">
+    <a ui-sref="home">Home</a> >
+    <a ui-sref="categories">Menu</a> > {{itemCtrl.items.data.category.name}}
+</div>
+
+<img id="itemsCategoryIcon" src="images/categories/{{itemCtrl.items.data.category.short_name}}.jpg">
+
+<div style="width:600px; margin: 30px auto 300px auto;">
+    <div class="item" ng-repeat="item in itemCtrl.items.data.menu_items">({{item.short_name}}) - {{item.name}}</div>
+</div>
