@@ -1,0 +1,102 @@
+<div class="container"  style="text-align:center;">
+    <h2 id="menu-categories-title" class="text-center">Sign up for our newsletter!</h2>
+    <div class="text-center">
+        (Delivered daily on days that do not end in "-day") &#128512;
+    </div>
+    
+    <form name="signUpForm" ng-if="!signUpCtrl.isUserSignedUp()" style="width:300px; text-align:left; display:inline-block;" novalidate>
+        <div class="form-group">
+            <label for="firstNameInput">First name</label>
+            <input type="text" class="form-control sign-up" 
+                id="firstNameInput"
+                name="firstNameInput" 
+                placeholder="Enter first name" 
+                ng-model="signUpCtrl.userInfo.firstName"
+                required>
+
+            <span ng-if="!signUpForm.firstNameInput.$invalid" class="input-ok glyphicon glyphicon-ok"></span>
+            <span ng-if="signUpForm.firstNameInput.$invalid && signUpForm.firstNameInput.$touched" class="input-nok glyphicon glyphicon-remove"></span>
+            
+            <span class="validation-error" ng-if="signUpForm.firstNameInput.$invalid && signUpForm.firstNameInput.$touched">
+                Must provide a first name
+            </span>
+        </div>
+        
+        <div class="form-group">
+            <label for="lastNameInput">Last name</label>
+            <input type="text" class="form-control sign-up" 
+                id="lastNameInput" 
+                name="lastNameInput" 
+                placeholder="Enter last name" 
+                ng-model="signUpCtrl.userInfo.lastName"
+                required>
+
+            <span ng-if="!signUpForm.lastNameInput.$invalid" class="input-ok glyphicon glyphicon-ok"></span>
+            <span ng-if="signUpForm.lastNameInput.$invalid && signUpForm.lastNameInput.$touched" class="input-nok glyphicon glyphicon-remove"></span>
+            
+            <span class="validation-error" ng-if="signUpForm.lastNameInput.$invalid && signUpForm.lastNameInput.$touched">
+                Must provide a last name
+            </span>
+        </div>
+        
+        <div class="form-group">
+            <label for="emailInput">Email address</label>
+            <input type="email" class="form-control sign-up" 
+                id="emailInput" 
+                name="emailInput" 
+                placeholder="Enter email" 
+                ng-model="signUpCtrl.userInfo.email"
+                required>
+
+            <span ng-if="!signUpForm.emailInput.$invalid" class="input-ok glyphicon glyphicon-ok"></span>
+            <span ng-if="signUpForm.emailInput.$invalid && signUpForm.emailInput.$touched" class="input-nok glyphicon glyphicon-remove"></span>
+
+            <span class="validation-error" ng-if="signUpForm.emailInput.$invalid && signUpForm.emailInput.$touched">
+                Must provide an email address
+            </span>
+        </div>
+        
+        <div class="form-group">
+            <label for="phoneInput">Phone number</label>
+            <input type="text" class="form-control sign-up" 
+                id="phoneInput" 
+                name="phoneInput" 
+                placeholder="####-###-###" 
+                ng-model="signUpCtrl.userInfo.phone"
+                pattern="(\d{4})-(\d{3})-(\d{3})"
+                required>
+
+            <span ng-if="!signUpForm.phoneInput.$invalid" class="input-ok glyphicon glyphicon-ok"></span>
+            <span ng-if="signUpForm.phoneInput.$invalid && signUpForm.phoneInput.$touched" class="input-nok glyphicon glyphicon-remove"></span>
+
+            <span class="validation-error" ng-if="signUpForm.phoneInput.$invalid && signUpForm.phoneInput.$touched">
+                Must provide a phone number (####-###-###)
+            </span>
+        </div>
+        
+        <div class="form-group">
+            <label for="favDishInput">Favorite dish menu number (e.g. A3)</label>
+            <input type="text" class="form-control sign-up" 
+                id="favDishInput" 
+                name="favDishInput" 
+                placeholder="Favorite dish"
+                ng-model="signUpCtrl.userInfo.favDish"
+                validate-dish-number
+                required>
+
+            <span ng-if="!signUpForm.favDishInput.$invalid" class="input-ok glyphicon glyphicon-ok"></span>
+            <span ng-if="!signUpForm.favDishInput.$error.validateDishNumber && signUpForm.favDishInput.$invalid && signUpForm.favDishInput.$touched" class="input-nok glyphicon glyphicon-remove"></span>
+            
+            <span class="validation-error" ng-if="signUpForm.favDishInput.$invalid && signUpForm.favDishInput.$touched">
+                Must provide a valid dish menu number
+            </span>
+
+        </div>
+        
+        <div style="text-align:center; margin-bottom:100px;">
+            <button ng-disabled="signUpForm.$invalid" class="btn btn-danger" ng-click="signUpCtrl.signUp()">Sign up</button>
+        </div>
+    </form>
+    
+    <h4 ng-if="signUpCtrl.isUserSignedUp()" class="text-center">Your information has been saved.</h4>
+</div>

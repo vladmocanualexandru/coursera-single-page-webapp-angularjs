@@ -183,3 +183,32 @@ h3.menu-item-title {
     width: 100%;
   }
 }
+
+input {
+  background: #3F0C1F !important;
+  color:#FFF !important;
+}
+
+input.ng-touched.ng-invalid {
+  border: 3px solid rgb(196, 33, 33);
+  border-radius:2px;
+}
+
+span.validation-error {
+  color:rgb(238, 83, 83);
+}
+
+input.form-control.sign-up {
+  display:inline-block;
+  width:270px;
+}
+
+span.input-ok {
+  color:greenyellow;
+  margin-left:10px;
+}
+
+span.input-nok {
+  color:rgb(238, 83, 83);
+  margin-left:10px;
+} 
