@@ -7,6 +7,7 @@
           require: 'ngModel',
 
           link: function(scope, elm, attrs, ctrl) {
+
             ctrl.$asyncValidators.validateDishNumber = function(modelValue, viewValue) {
                 if (viewValue) {
                     return MenuService.getMenuItem(viewValue.toUpperCase()).then(function (response) {

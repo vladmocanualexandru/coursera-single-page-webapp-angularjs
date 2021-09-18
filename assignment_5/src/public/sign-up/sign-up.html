@@ -94,7 +94,13 @@
         </div>
         
         <div style="text-align:center; margin-bottom:100px;">
-            <button ng-disabled="signUpForm.$invalid" class="btn btn-danger" ng-click="signUpCtrl.signUp()">Sign up</button>
+            <button ng-disabled="
+                signUpForm.firstNameInput.$invalid ||
+                signUpForm.lastNameInput.$invalid || 
+                signUpForm.emailInput.$invalid ||
+                signUpForm.phoneInput.$invalid || 
+
+                signUpForm.$invalid" class="btn btn-danger" ng-click="signUpCtrl.signUp()">Sign up</button>
         </div>
     </form>
     
