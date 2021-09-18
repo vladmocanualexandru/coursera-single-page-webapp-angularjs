@@ -4,8 +4,6 @@
     angular.module('public')
     .directive('validateDishNumber', ["MenuService", function(MenuService) {
         return {
-          // element must have ng-model attribute
-          // or $validators does not work
           require: 'ngModel',
 
           link: function(scope, elm, attrs, ctrl) {
